@@ -28,8 +28,8 @@ directory searching, as well as a slew of other cool features. 
   <release>
     <license>PHP</license>
     <version>0.3.0</version>
-    <date>2004-12-15</date>
-    <state>stable</state>
+    <date>2004-12-17</date>
+    <state>beta</state>
     <notes>
 * search() can now be called statically (bug #2132)
 * search() can now optionally match only against filename only (req #712)
