@@ -197,15 +197,23 @@ class File_Find
      */
     function &search($pattern, $directory, $type = 'php', $fullpath = true)
     {
-        $matches = array();
-        list (,$files)  = File_Find::maptree($directory);
-        $match_function = File_Find::_determineRegex($pattern, $type);
 
-        reset($files);
-        while (list(,$entry) = each($files)) {
-            if ($match_function($pattern, 
-                                $fullpath ? $entry : basename($entry))) {
-                $matches[] = $entry;
+        // if called statically
+        if (!isset($this)) {
+            $obj = &new File_Find();
+            return $obj->search($pattern, $directory, $type, $fullpath);
+        } else {
+
+            $matches = array();
+            list (,$files)  = File_Find::maptree($directory);
+            $match_function = File_Find::_determineRegex($pattern, $type);
+
+            reset($files);
+            while (list(,$entry) = each($files)) {
+                if ($match_function($pattern, 
+                                    $fullpath ? $entry : basename($entry))) {
+                    $matches[] = $entry;
+                }
             }
         }
 
