@@ -27,12 +27,12 @@ directory searching, as well as a slew of other cool features. 
 
   <release>
     <license>PHP</license>
-    <version>0.2.0</version>
-    <date>2002-11-14</date>
+    <version>0.3.0</version>
+    <date>2004-08-18</date>
     <state>stable</state>
     <notes>
-* added mapTreeMultiple() function / method
-* improved portability for non UNIX platforms
+* search() can now be called statically
+* search() can now optionally match only against filename only
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="File">
@@ -42,6 +42,17 @@ directory searching, as well as a slew of other cool features. 
   </release>
 
   <changelog>
+
+    <release>
+      <version>0.2.0</version>
+      <date>2002-11-14</date>
+      <state>stable</state>
+      <notes>
+* added mapTreeMultiple() function / method
+* improved portability for non UNIX platforms
+      </notes>
+    </release>
+
     <release>
       <version>0.1</version>
       <date>2002-01-26</date>
