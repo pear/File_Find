@@ -78,7 +78,7 @@ class File_Find
 
         $match_function = File_Find::_determineRegex($pattern, $pattern_type);
         $matches = array();
-        while ($entry = @readdir ($dh)) {
+        while (false !== ($entry = @readdir ($dh))) {
             if ($match_function($pattern, $entry) &&
                 $entry != '.'                     &&
                 $entry != '..') {
@@ -150,7 +150,7 @@ class File_Find
 
         $directory .= DIRECTORY_SEPARATOR;
         $dh=opendir($directory);
-        while ($entry = readdir($dh)) {
+        while (false !=== ($entry = @readdir($dh))) {
             if ($entry != "." && $entry != "..") {
                  array_push($retval, $entry);
             }
@@ -246,7 +246,7 @@ class File_Find
             return $pe;
         }
 
-        while ($entry = @readdir($dh)) {
+        while (false !== ($entry = @readdir($dh))) {
             if ($entry != '.' &&
                 $entry != '..') {
 
