@@ -24,4 +24,14 @@ touch('/tmp/File_Find/dir/dir3/4.bak');
 @mkdir('/tmp/File_Find/dir/txtdir');
 touch('/tmp/File_Find/dir/txtdir/5.txt');
 
+@mkdir('/tmp/File_Find/dir2/');
+@mkdir('/tmp/File_Find/dir2/0');
+touch('/tmp/File_Find/dir2/0/1.txt');
+
+@mkdir('/tmp/File_Find/dir2/1');
+touch('/tmp/File_Find/dir2/1/1.txt');
+
+@mkdir('/tmp/File_Find/dir2/2');
+touch('/tmp/File_Find/dir2/2/1.txt');
+
 ?>
