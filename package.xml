@@ -27,13 +27,13 @@ directory searching, as well as a slew of other cool features. 
 
   <release>
     <license>PHP</license>
-    <version>0.3.0</version>
-    <date>2004-12-17</date>
+    <version>0.3.1</version>
+    <date>2005-01-13</date>
     <state>beta</state>
     <notes>
-* search() can now be called statically (bug #2132)
-* search() can now optionally match only against filename only (req #712)
-* fixes problems with directories named 0 (bug #2773)
+* fixed bug search() where static calls to search() failed
+  if it was called inside instance of another object 
+  (Anatoly Techtonik)
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="File">
@@ -45,6 +45,7 @@ directory searching, as well as a slew of other cool features. 
          <file role="test" name="02maptree.phpt" />
          <file role="test" name="03maptreemultiple.phpt" />
          <file role="test" name="04search.phpt" />
+         <file role="test" name="05search_inside.phpt" />
          <file role="test" name="bug2773.phpt" />
       </dir>     
 
@@ -52,6 +53,18 @@ directory searching, as well as a slew of other cool features. 
   </release>
 
   <changelog>
+
+
+  <release>
+    <version>0.3.0</version>
+    <date>2004-12-17</date>
+    <state>beta</state>
+    <notes>
+* search() can now be called statically (bug #2132)
+* search() can now optionally match only against filename only (req #712)
+* fixes problems with directories named 0 (bug #2773)
+    </notes>
+    </release>
 
     <release>
       <version>0.2.0</version>
