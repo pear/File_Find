@@ -186,13 +186,16 @@ class File_Find
      * @param string $type the type of regular expression support to use, either
      * 'php' or 'perl'.
      *
+     * @param bool $fullpath whether the regex should be matched against the
+     * full path or only against the filename
+     *
      * @return array a list of files matching the pattern parameter in the the
      * directory path specified by the directory parameter
      *
      * @author Sterling Hughes <sterling@php.net>
      * @access public
      */
-    function &search($pattern, $directory, $type = 'php')
+    function &search($pattern, $directory, $type = 'php', $fullpath = true)
     {
         $matches = array();
         list (,$files)  = File_Find::maptree($directory);
@@ -200,8 +203,10 @@ class File_Find
 
         reset($files);
         while (list(,$entry) = each($files)) {
-            if ($match_function($pattern, $entry))
+            if ($match_function($pattern, 
+                                $fullpath ? $entry : basename($entry))) {
                 $matches[] = $entry;
+            }
         }
 
         return ($matches);
