@@ -28,16 +28,26 @@ directory searching, as well as a slew of other cool features. 
   <release>
     <license>PHP</license>
     <version>0.3.0</version>
-    <date>2004-08-18</date>
+    <date>2004-12-15</date>
     <state>stable</state>
     <notes>
-* search() can now be called statically
-* search() can now optionally match only against filename only
+* search() can now be called statically (bug #2132)
+* search() can now optionally match only against filename only (req #712)
+* fixes problems with directories named 0 (bug #2773)
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="File">
          <file role="php" name="Find.php" />
       </dir>
+      <dir name="tests" role="test">
+         <file role="test" name="setup.php" />
+         <file role="test" name="01glob.phpt" />
+         <file role="test" name="02maptree.phpt" />
+         <file role="test" name="03maptreemultiple.phpt" />
+         <file role="test" name="04search.phpt" />
+         <file role="test" name="bug2773.phpt" />
+      </dir>     
+
     </filelist>
   </release>
 
