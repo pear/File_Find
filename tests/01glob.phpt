@@ -10,8 +10,8 @@ print $status;
 require_once('./setup.php');
 
 $ff = new File_Find();
-$result  = &$ff->glob( '/.*txt/', './dir/', 'perl' ) ;
-$result2 = &File_Find::glob( '/.*txt/', './dir/', 'perl' ) ;
+$result  = &$ff->glob( '/.*txt/', '/tmp/File_Find/dir/', 'perl' ) ;
+$result2 = &File_Find::glob( '/.*txt/', '/tmp/File_Find/dir/', 'perl' ) ;
 
 print_r($result);
 print_r($result2);

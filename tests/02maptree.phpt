@@ -10,8 +10,8 @@ print $status;
 require_once('./setup.php');
 
 $ff = new File_Find();
-$result  = $ff->mapTree('./dir') ;
-//$result2 = File_Find::mapTree('./dir') ;
+$result  = $ff->mapTree('/tmp/File_Find/dir') ;
+//$result2 = File_Find::mapTree('/tmp/File_Find/dir') ;
 
 print_r($result);
 //print_r($result2);
@@ -24,21 +24,21 @@ Array
 (
     [0] => Array
         (
-            [0] => ./dir
-            [1] => ./dir/txtdir
-            [2] => ./dir/dir3
-            [3] => ./dir/dir2
+            [0] => /tmp/File_Find/dir
+            [1] => /tmp/File_Find/dir/txtdir
+            [2] => /tmp/File_Find/dir/dir3
+            [3] => /tmp/File_Find/dir/dir2
         )
 
     [1] => Array
         (
-            [0] => ./dir/1.txt
-            [1] => ./dir/2.txt
-            [2] => ./dir/txtdir/5.txt
-            [3] => ./dir/dir3/4.txt
-            [4] => ./dir/dir3/4.bak
-            [5] => ./dir/dir2/3.txt
-            [6] => ./dir/dir2/3.bak
+            [0] => /tmp/File_Find/dir/1.txt
+            [1] => /tmp/File_Find/dir/2.txt
+            [2] => /tmp/File_Find/dir/txtdir/5.txt
+            [3] => /tmp/File_Find/dir/dir3/4.txt
+            [4] => /tmp/File_Find/dir/dir3/4.bak
+            [5] => /tmp/File_Find/dir/dir2/3.txt
+            [6] => /tmp/File_Find/dir/dir2/3.bak
         )
 
 )
