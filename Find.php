@@ -150,7 +150,7 @@ class File_Find
 
         $directory .= DIRECTORY_SEPARATOR;
         $dh=opendir($directory);
-        while (false !=== ($entry = @readdir($dh))) {
+        while (false !== ($entry = @readdir($dh))) {
             if ($entry != "." && $entry != "..") {
                  array_push($retval, $entry);
             }
