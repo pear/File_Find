@@ -28,10 +28,11 @@ directory searching, as well as a slew of other cool features. 
   <release>
     <license>PHP</license>
     <version>0.2.0</version>
-    <date>2002-11-07</date>
+    <date>2002-11-14</date>
     <state>stable</state>
     <notes>
-xxx
+* added mapTreeMultiple() function / method
+* improved portability for non UNIX platforms
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="File">
