@@ -199,9 +199,7 @@ class File_Find
     {
 
         /* if called statically */
-        /* TODO: this will fail if File_Find::search() is called inside */
-        /* instance of some other object                                */
-        if (!isset($this)) {
+        if (!isset($this)  || !is_a($this, "File_Find")) {
             $obj = &new File_Find();
             return $obj->search($pattern, $directory, $type, $fullpath);
         } else {
