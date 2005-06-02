@@ -74,7 +74,7 @@ class File_Find
         $dh = @opendir($dirpath);
 
         if (!$dh) {
-            $pe = new FileFindException("Cannot open directory");
+            $pe = PEAR::raiseError("Cannot open directory");
             return $pe;
         }
 
@@ -221,7 +221,7 @@ class File_Find
     }
 
     /**
-     * Determine whether or not a variable is a PEAR exception
+     * Determine whether or not a variable is a PEAR error
      *
      * @param object PEAR_Error $var the variable to test.
      *
@@ -257,7 +257,7 @@ class File_Find
         $dh = @opendir($directory);
 
         if (!$dh) {
-            $pe = new FileFindException("Cannot open directory");
+            $pe = PEAR::raiseError("Cannot open directory");
             return $pe;
         }
 
@@ -296,41 +296,6 @@ class File_Find
         }
 
         return $match_function;
-    }
-}
-
-/**
-* Exception Class for Errorhandling of File_Find
-* @access public
-*/
-class FileFindException extends PEAR_Error
-{
-    /**
-     * classname
-     * @var string
-     */
-    var $classname = 'FileFindException';
-
-    /**
-     * Message in front of the error message
-     * @var string
-     */
-    var $error_message_prepend = 'Error in File_Find';
-
-    /**
-     * Creates a PEAR_Error object
-     *
-     * @param string $message    Error message
-     * @param int    $mode       Error mode
-     * @param int    $level      Error level
-     *
-     * @return object PEAR_Error
-     * @access public
-     */
-    function FileFindException($message, $mode = PEAR_ERROR_RETURN,
-                               $level = E_USER_NOTICE)
-    {
-        $this->PEAR_Error($message, $mode, $level);
     }
 }
 
