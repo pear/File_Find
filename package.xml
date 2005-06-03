@@ -27,13 +27,20 @@ directory searching, as well as a slew of other cool features. 
 
   <release>
     <license>PHP</license>
-    <version>0.3.1</version>
-    <date>2005-01-13</date>
+    <version>0.4.0</version>
+    <date>2005-06-03</date>
     <state>beta</state>
     <notes>
-* fixed bug search() where static calls to search() failed
-  if it was called inside instance of another object 
-  (Anatoly Techtonik)
+* Error handling now uses PEAR::raiseError() instead of FileFindException.
+  This might cause BC break if you were checking errors with is_a()
+  instead of PEAR::isError() of File_Find::isError()!
+
+* All output is now consistent having the leading directory separator
+  stripped out from directory names. 
+
+- FileFindException error class was removed
+
+- File_Find_version() method was removed
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="File">
@@ -53,7 +60,16 @@ directory searching, as well as a slew of other cool features. 
   </release>
 
   <changelog>
-
+  <release>
+    <version>0.3.1</version>
+    <date>2005-01-13</date>
+    <state>beta</state>
+    <notes>
+* fixed bug search() where static calls to search() failed
+  if it was called inside instance of another object 
+  (Anatoly Techtonik)
+    </notes>
+  </release>
 
   <release>
     <version>0.3.0</version>
@@ -61,7 +77,9 @@ directory searching, as well as a slew of other cool features. 
     <state>beta</state>
     <notes>
 * search() can now be called statically (bug #2132)
+
 * search() can now optionally match only against filename only (req #712)
+
 * fixes problems with directories named 0 (bug #2773)
     </notes>
     </release>
@@ -72,6 +90,7 @@ directory searching, as well as a slew of other cool features. 
       <state>stable</state>
       <notes>
 * added mapTreeMultiple() function / method
+
 * improved portability for non UNIX platforms
       </notes>
     </release>
