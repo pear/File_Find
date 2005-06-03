@@ -112,6 +112,9 @@ class File_Find
         $this->files       = array();
         $this->directories = array();
 
+        /* strip out tailing / to be consistent */
+        $directory = ereg_replace(DIRECTORY_SEPARATOR.'$', '', $directory);
+
         $this->_dirs = array($directory);
 
         while (count($this->_dirs)) {
@@ -248,6 +251,7 @@ class File_Find
      */
     function _build($directory)
     {
+
         $dh = @opendir($directory);
 
         if (!$dh) {
