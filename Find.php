@@ -107,6 +107,11 @@ class File_Find
      */
     function &maptree($directory)
     {
+
+        /* clear the results just in case */
+        $this->files       = array();
+        $this->directories = array();
+
         $this->_dirs = array($directory);
 
         while (count($this->_dirs)) {
@@ -254,6 +259,8 @@ class File_Find
             if ($entry != '.' && $entry != '..') {
 
                 $entry = $directory.DIRECTORY_SEPARATOR.$entry;
+                $entry = str_replace(DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR,
+                                     DIRECTORY_SEPARATOR, $entry);
 
                 if (is_dir($entry)) {
                     array_push($this->_dirs, $entry);
