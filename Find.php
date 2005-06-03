@@ -235,17 +235,6 @@ class File_Find
     }
 
     /**
-     * Fetch the current File_Find version
-     *
-     * @return string the current File_Find version.
-     * @access public
-     */
-    function File_Find_version()
-    {
-         return 1.1;
-    }
-
-    /**
      * internal function to build singular directory trees, used by
      * File_Find::maptree()
      *
