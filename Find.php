@@ -107,8 +107,13 @@ class File_Find
      */
     function &maptree($directory)
     {
-        /* TODO: make mapTree() statically callable */
 
+        /* if called statically */
+        if (!isset($this)  || !is_a($this, "File_Find")) {
+            $obj = &new File_Find();
+            return $obj->maptree($directory);
+        }
+      
         /* clear the results just in case */
         $this->files       = array();
         $this->directories = array();
