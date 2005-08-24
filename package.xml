@@ -27,20 +27,11 @@ directory searching, as well as a slew of other cool features. 
 
   <release>
     <license>PHP</license>
-    <version>0.4.0</version>
-    <date>2005-06-03</date>
-    <state>beta</state>
+    <version>1.0.0</version>
+    <date>2005-08-24</date>
+    <state>stable</state>
     <notes>
-* Error handling now uses PEAR::raiseError() instead of FileFindException.
-  This might cause BC break if you were checking errors with is_a()
-  instead of PEAR::isError() of File_Find::isError()!
-
-* All output is now consistent having the leading directory separator
-  stripped out from directory names. 
-
-- FileFindException error class was removed
-
-- File_Find_version() method was removed
+* maptree() can now be called statically (bug #4994)
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="File">
@@ -60,6 +51,22 @@ directory searching, as well as a slew of other cool features. 
   </release>
 
   <changelog>
+  <release>
+    <version>0.4.0</version>
+    <date>2005-06-03</date>
+    <state>beta</state>
+    <notes>
+* Error handling now uses PEAR::raiseError() instead of FileFindException.
+  This might cause BC break if you were checking errors with is_a()
+  instead of PEAR::isError() of File_Find::isError()!
+
+* All output is now consistent having the leading directory separator
+  stripped out from directory names. 
+
+- FileFindException error class was removed
+
+- File_Find_version() method was removed
+  </release>
   <release>
     <version>0.3.1</version>
     <date>2005-01-13</date>
