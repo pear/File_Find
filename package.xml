@@ -7,7 +7,7 @@
   <description>
 File_Find, created as a replacement for its Perl counterpart, also named 
 File_Find, is a directory searcher, which handles, globbing, recursive 
-directory searching, as well as a slew of other cool features. 
+directory searching, as well as a slew of other cool features.
   </description>
 
   <maintainers>
@@ -27,11 +27,11 @@ directory searching, as well as a slew of other cool features. 
 
   <release>
     <license>PHP</license>
-    <version>1.0.0</version>
-    <date>2005-08-24</date>
+    <version>1.0.1</version>
+    <date>2005-08-30</date>
     <state>stable</state>
     <notes>
-* maptree() can now be called statically (bug #4994)
+* fixed package.xml to avoid installation problems with PHP 5.1.X
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="File">
@@ -52,6 +52,14 @@ directory searching, as well as a slew of other cool features. 
 
   <changelog>
   <release>
+    <version>1.0.0</version>
+    <date>2005-08-24</date>
+    <state>stable</state>
+    <notes>
+* maptree() can now be called statically (bug #4994)
+    </notes>  
+  </release>
+  <release>
     <version>0.4.0</version>
     <date>2005-06-03</date>
     <state>beta</state>
@@ -66,6 +74,7 @@ directory searching, as well as a slew of other cool features. 
 - FileFindException error class was removed
 
 - File_Find_version() method was removed
+    </notes>
   </release>
   <release>
     <version>0.3.1</version>
