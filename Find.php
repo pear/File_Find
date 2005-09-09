@@ -207,31 +207,42 @@ class File_Find
      * @param bool $fullpath whether the regex should be matched against the
      * full path or only against the filename
      *
+     * @param string $match can be either 'files', 'dirs' or 'both' to specify
+     * the kind of list to return
+     *
      * @return array a list of files matching the pattern parameter in the the
      * directory path specified by the directory parameter
      *
      * @author Sterling Hughes <sterling@php.net>
      * @access public
      */
-    function &search($pattern, $directory, $type = 'php', $fullpath = true)
+    function &search($pattern, $directory, $type = 'php', $fullpath = true, $match = 'files')
     {
 
         /* if called statically */
         if (!isset($this)  || !is_a($this, "File_Find")) {
             $obj = &new File_Find();
             return $obj->search($pattern, $directory, $type, $fullpath);
-        } else {
+        }
 
-            $matches = array();
-            list (,$files)  = File_Find::maptree($directory);
-            $match_function = File_Find::_determineRegex($pattern, $type);
+        $matches = array();
+        list ($directories,$files)  = File_Find::maptree($directory);
+        switch($match) {
+            case 'directories': $data = $directories; break;
+            case 'both': $data = array_merge($directories, $files); break;
+            case 'files':
+            default:
+                $data = $files;
+        }
+        unset($files, $directories);
 
-            reset($files);
-            while (list(,$entry) = each($files)) {
-                if ($match_function($pattern, 
-                                    $fullpath ? $entry : basename($entry))) {
-                    $matches[] = $entry;
-                }
+        $match_function = File_Find::_determineRegex($pattern, $type);
+
+        reset($data);
+        while (list(,$entry) = each($data)) {
+            if ($match_function($pattern, 
+                                $fullpath ? $entry : basename($entry))) {
+                $matches[] = $entry;
             }
         }
 
