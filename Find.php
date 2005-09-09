@@ -21,7 +21,7 @@
 
 require_once 'PEAR.php';
 
-define('FILE_FIND_VERSION', '1.1.0');
+define('FILE_FIND_VERSION', '@package_version@');
 
 /**
 *  Commonly needed functions searching directory trees
