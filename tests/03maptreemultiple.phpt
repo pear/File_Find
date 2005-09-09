@@ -10,9 +10,9 @@ print $status;
 require_once('./setup.php');
 
 $ff = new File_Find();
-$result0  = $ff->mapTreeMultiple('/tmp/File_Find/dir/') ;
-$result1  = $ff->mapTreeMultiple('/tmp/File_Find/dir') ;
-$result2 = File_Find::mapTreeMultiple('/tmp/File_Find/dir/') ;
+$result0  = $ff->mapTreeMultiple('File_Find//dir/') ;
+$result1  = $ff->mapTreeMultiple('File_Find/dir') ;
+$result2 = File_Find::mapTreeMultiple('File_Find/dir') ;
 
 print_r($result0);
 print_r($result1);
@@ -28,14 +28,14 @@ Array
     [1] => 2.txt
     [dir2] => Array
         (
-            [0] => 3.txt
-            [1] => 3.bak
+            [0] => 3.bak
+            [1] => 3.txt
         )
 
     [dir3] => Array
         (
-            [0] => 4.txt
-            [1] => 4.bak
+            [0] => 4.bak
+            [1] => 4.txt
         )
 
     [txtdir] => Array
@@ -50,14 +50,14 @@ Array
     [1] => 2.txt
     [dir2] => Array
         (
-            [0] => 3.txt
-            [1] => 3.bak
+            [0] => 3.bak
+            [1] => 3.txt
         )
 
     [dir3] => Array
         (
-            [0] => 4.txt
-            [1] => 4.bak
+            [0] => 4.bak
+            [1] => 4.txt
         )
 
     [txtdir] => Array
@@ -72,14 +72,14 @@ Array
     [1] => 2.txt
     [dir2] => Array
         (
-            [0] => 3.txt
-            [1] => 3.bak
+            [0] => 3.bak
+            [1] => 3.txt
         )
 
     [dir3] => Array
         (
-            [0] => 4.txt
-            [1] => 4.bak
+            [0] => 4.bak
+            [1] => 4.txt
         )
 
     [txtdir] => Array
