@@ -3,7 +3,7 @@
 // +----------------------------------------------------------------------+
 // | PHP Version 4                                                        |
 // +----------------------------------------------------------------------+
-// | Copyright (c) 1997-2003 The PHP Group                                |
+// | Copyright (c) 1997-2005 The PHP Group                                |
 // +----------------------------------------------------------------------+
 // | This source file is subject to version 2.02 of the PHP license,      |
 // | that is bundled with this package in the file LICENSE, and is        |
@@ -20,6 +20,8 @@
 //
 
 require_once 'PEAR.php';
+
+define('FILE_FIND_VERSION', '1.1.0');
 
 /**
 *  Commonly needed functions searching directory trees
@@ -118,8 +120,10 @@ class File_Find
         $this->files       = array();
         $this->directories = array();
 
-        /* strip out tailing / to be consistent */
-        $directory = ereg_replace(DIRECTORY_SEPARATOR.'$', '', $directory);
+        /* consistency rules - strip out trailing slashes */
+        $directory = preg_replace('![\\/]+$!', '', $directory);
+        /* use only native system directory delimiters */
+        $directory = preg_replace("![\\/]+!", DIRECTORY_SEPARATOR, $directory);
 
         $this->_dirs = array($directory);
 
