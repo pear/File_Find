@@ -10,8 +10,8 @@ print $status;
 require_once('./setup.php');
 
 $ff = new File_Find();
-$result  = $ff->mapTreeMultiple('/tmp/File_Find/dir2') ;
-$result2 = File_Find::mapTreeMultiple('/tmp/File_Find/dir2') ;
+$result  = $ff->mapTreeMultiple('File_Find/dir2') ;
+$result2 = File_Find::mapTreeMultiple('File_Find/dir2') ;
 
 print_r($result);
 print_r($result2);
