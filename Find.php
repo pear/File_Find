@@ -70,6 +70,7 @@ class File_Find
      *
      * @author Sterling Hughes <sterling@php.net>
      * @access public
+     * @static
      */
     function &glob($pattern, $dirpath, $pattern_type = 'php')
     {
@@ -159,6 +160,7 @@ class File_Find
      *
      * @author Mika Tuupola <tuupola@appelsiini.net>
      * @access public
+     * @static
      */
     function &mapTreeMultiple($directory, $maxrecursion = 0, $count = 0)
     {   
@@ -184,7 +186,7 @@ class File_Find
             if (!is_array($val) && is_dir($path)) {
                 unset($retval[$key]);
                 if ($maxrecursion == 0 || $count < $maxrecursion) {
-                    $retval[$val] = File_Find::mapTreeMultiple($path, 
+                    $retval[$val] = &File_Find::mapTreeMultiple($path, 
                                     $maxrecursion, $count);
                 }
             }
@@ -215,15 +217,10 @@ class File_Find
      *
      * @author Sterling Hughes <sterling@php.net>
      * @access public
+     * @static
      */
     function &search($pattern, $directory, $type = 'php', $fullpath = true, $match = 'files')
     {
-
-        /* if called statically */
-        if (!isset($this)  || !is_a($this, "File_Find")) {
-            $obj = &new File_Find();
-            return $obj->search($pattern, $directory, $type, $fullpath);
-        }
 
         $matches = array();
         list ($directories,$files)  = File_Find::maptree($directory);
