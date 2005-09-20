@@ -123,9 +123,9 @@ class File_Find
         $this->directories = array();
 
         /* consistency rules - strip out trailing slashes */
-        $directory = preg_replace('![\\/]+$!', '', $directory);
+        $directory = preg_replace('![\\\\/]+$!', '', $directory);
         /* use only native system directory delimiters */
-        $directory = preg_replace("![\\/]+!", DIRECTORY_SEPARATOR, $directory);
+        $directory = preg_replace("![\\\\/]+!", DIRECTORY_SEPARATOR, $directory);
 
         $this->_dirs = array($directory);
 
