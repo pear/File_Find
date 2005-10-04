@@ -26,16 +26,12 @@ directory searching, as well as a slew of other cool features.
   </maintainers>
 
   <release>
-    <version>1.1.0</version>
-    <date>2005-09-12</date>
+    <version>1.2.0</version>
+    <date>2005-10-04</date>
     <license>PHP</license>
     <state>stable</state>
    <notes>
-* use only native system directory delimiters for consistency
-
-* search() method can now match files, directories or both
-
-* port tests to windows platform
++ new 'shell' match method
    </notes> 
 
   <provides type="class" name="File_Find" />  
@@ -62,6 +58,19 @@ directory searching, as well as a slew of other cool features.
   </release>
 
   <changelog>
+  <release>
+    <version>1.1.0</version>
+    <date>2005-09-12</date>
+    <license>PHP</license>
+    <state>stable</state>
+   <notes>
+* use only native system directory delimiters for consistency
+
+* search() method can now match files, directories or both
+
+* port tests to windows platform
+   </notes>
+  </release>
   <release>
     <version>1.0.1</version>
     <date>2005-08-30</date>
