@@ -170,14 +170,16 @@ class File_Find
         $count++;
 
         $directory .= DIRECTORY_SEPARATOR;
-        $dh = opendir($directory);
-        while (false !== ($entry = @readdir($dh))) {
-            if ($entry != '.' && $entry != '..') {
-                 array_push($retval, $entry);
+        
+        if (is_readable($directory)) {
+            $dh = opendir($directory);
+            while (false !== ($entry = @readdir($dh))) {
+                if ($entry != '.' && $entry != '..') {
+                     array_push($retval, $entry);
+                }
             }
+            closedir($dh);
         }
-
-        closedir($dh);
      
         while (list($key, $val) = each($retval)) {
             $path = $directory . $val;
