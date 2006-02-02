@@ -93,7 +93,11 @@ class File_Find
 
         @closedir($dh);
 
-        return (count($matches) > 0) ? $matches : null;
+        if (0 == count($matches)) {
+            $matches = null;
+        }
+
+        return $matches ;
     }
 
     /**
@@ -135,7 +139,9 @@ class File_Find
             array_push($this->directories, $dir);
         }
 
-        return array($this->directories, $this->files);
+        $retval = array($this->directories, $this->files);
+        return $retval;
+
     }
 
     /**
@@ -228,8 +234,12 @@ class File_Find
         $matches = array();
         list ($directories,$files)  = File_Find::maptree($directory);
         switch($match) {
-            case 'directories': $data = $directories; break;
-            case 'both': $data = array_merge($directories, $files); break;
+            case 'directories': 
+                $data = $directories; 
+                break;
+            case 'both': 
+                $data = array_merge($directories, $files); 
+                break;
             case 'files':
             default:
                 $data = $files;
@@ -248,7 +258,7 @@ class File_Find
             }
         }
 
-        return ($matches);
+        return $matches;
     }
 
     /**
