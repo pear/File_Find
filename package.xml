@@ -23,6 +23,12 @@ directory searching, as well as a slew of other cool features.
       <email>tuupola@appelsiini.net</email>
       <role>lead</role>
     </maintainer>
+    <maintainer>
+      <user>techtonik</user>
+      <name>Anatoly Techtonik</name>
+      <email>techtonik@php.net</email>
+      <role>developer</role>
+    </maintainer>
   </maintainers>
 
   <release>
