@@ -26,12 +26,18 @@ directory searching, as well as a slew of other cool features.
   </maintainers>
 
   <release>
-    <version>1.2.0</version>
-    <date>2005-10-04</date>
+    <version>1.2.1</version>
+    <date>2006-02-02</date>
     <license>PHP</license>
     <state>stable</state>
    <notes>
-+ new 'shell' match method
+* Fixed bug #5892 and other "Only variable references should be returned 
+  by reference" errors.
+
+* Fixed bug #6173. Check for empty strings given as ereg to search().
+
+* silence errors if mapTreeMultiple() encounters an unreadable
+  directory (thanks to Erik Stainsby)
    </notes> 
 
   <provides type="class" name="File_Find" />  
@@ -58,10 +64,19 @@ directory searching, as well as a slew of other cool features.
   </release>
 
   <changelog>
+
+  <release>
+    <version>1.2.0</version>
+    <date>2005-10-04</date>
+    <state>stable</state>
+   <notes>
++ new 'shell' match method
+   </notes> 
+  </release>
+
   <release>
     <version>1.1.0</version>
     <date>2005-09-12</date>
-    <license>PHP</license>
     <state>stable</state>
    <notes>
 * use only native system directory delimiters for consistency
