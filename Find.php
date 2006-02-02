@@ -239,10 +239,12 @@ class File_Find
         $match_function = File_Find::_determineRegex($pattern, $type);
 
         reset($data);
-        while (list(,$entry) = each($data)) {
-            if ($match_function($pattern, 
-                                $fullpath ? $entry : basename($entry))) {
-                $matches[] = $entry;
+        if ($pattern) {
+            while (list(,$entry) = each($data)) {
+                if ($match_function($pattern, 
+                                    $fullpath ? $entry : basename($entry))) {
+                    $matches[] = $entry;
+                } 
             }
         }
 
