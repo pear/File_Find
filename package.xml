@@ -32,18 +32,23 @@ directory searching, as well as a slew of other cool features.
   </maintainers>
 
   <release>
-    <version>1.2.1</version>
-    <date>2006-02-02</date>
+    <version>1.2.2</version>
+    <date>2006-02-11</date>
     <license>PHP</license>
     <state>stable</state>
    <notes>
-* Fixed bug #5892 and other "Only variable references should be returned 
-  by reference" errors.
++ Empty pattern workaround from bug #6173 also in glob method
 
-* Fixed bug #6173. Check for empty strings given as ereg to search().
+Various 'enhancements' to 'shell' method
+http://pear.php.net/manual/en/package.filesystem.file-find.searchmethods.php
 
-* silence errors if mapTreeMultiple() encounters an unreadable
-  directory (thanks to Erik Stainsby)
+* Empty pattern specified in 'shell' is equal to '*.*'
+
+- Empty exclude mask of a 'shell' pattern is detected correctly now
+
++ Use *. to match files without extension
+
++ use filename.*. to match files with only one 'extension' (bug #5503)
    </notes> 
 
   <provides type="class" name="File_Find" />  
@@ -70,6 +75,21 @@ directory searching, as well as a slew of other cool features.
   </release>
 
   <changelog>
+
+  <release>
+    <version>1.2.1</version>
+    <date>2005-10-04</date>
+    <state>stable</state>
+   <notes>
+* Fixed bug #5892 and other "Only variable references should be returned 
+  by reference" errors.
+
+* Fixed bug #6173. Check for empty strings given as ereg to search().
+
+* silence errors if mapTreeMultiple() encounters an unreadable
+  directory (thanks to Erik Stainsby)
+   </notes> 
+  </release>
 
   <release>
     <version>1.2.0</version>
