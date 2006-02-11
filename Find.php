@@ -432,31 +432,42 @@ function _File_Find_match_shell_get_pattern($mask) {
     }
 
     // if empty string given return *.* pattern
-    if (strlen($mask) == 0) return "+^.*$+i";
+    if (strlen($mask) == 0) return "!^.*$!";
 
     // convert to preg regexp
     $regexmask = implode("|", $masks);
     if (defined("FILE_FIND_DEBUG")) {
         print("regexMask step one(implode): $regexmask");
     }
-    $regexmask = addcslashes($regexmask, '^$}{)(\/.+');
+    $regexmask = addcslashes($regexmask, '^$}!{)(\/.+');
     if (defined("FILE_FIND_DEBUG")) {
         print("\nregexMask step two(addcslashes): $regexmask");
     }
     $regexmask = preg_replace("!(\*|\?)!", ".$1", $regexmask);
     if (defined("FILE_FIND_DEBUG")) {
-        print("\nregexMask step three(*,? -> .*,.?): $regexmask");
+        print("\nregexMask step three(* ? -> .* .?): $regexmask");
+    }
+    // a special case '*.' at the end means that there is no extension
+    $regexmask = preg_replace("!\.\*\\\.(\||$)!", "[^\.]*$1", $regexmask);
+    // it is impossible to have dot at the end of filename
+    $regexmask = preg_replace("!\\\.(\||$)!", "$1", $regexmask);
+    // and .* at the end also means that there could be nothing at all
+    //   (i.e. no dot at the end also)
+    $regexmask = preg_replace("!\\\.\.\*(\||$)!", "(\\\\..*)?$1", $regexmask);
+    if (defined("FILE_FIND_DEBUG")) {
+        print("\nregexMask step two and half(*.$ \\..*$ .$ -> [^.]*$ .?.* $): $regexmask");
     }
     // if no extension supplied - add .* to match partially from filename start
     if (strpos($regexmask, "\\.") === FALSE) $regexmask .= ".*";
+
     // file mask match whole name - adding restrictions
     $regexmask = preg_replace("!(\|)!", '^'."$1".'$', $regexmask);
     $regexmask = '^'.$regexmask.'$';
     if (defined("FILE_FIND_DEBUG")) {
         print("\nregexMask step three(^ and $ to match whole name): $regexmask");
     }
-    // wrap regex into + since all + are already escaped
-    $regexmask = "+$regexmask+i";
+    // wrap regex into ! since all ! are already escaped
+    $regexmask = "!$regexmask!i";
     if (defined("FILE_FIND_DEBUG")) {
         print("\nWrapped regex: $regexmask\n");
     }
