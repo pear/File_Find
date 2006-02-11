@@ -69,6 +69,7 @@ http://pear.php.net/manual/en/package.filesystem.file-find.searchmethods.php
          <file role="test" name="03maptreemultiple.phpt" />
          <file role="test" name="04search.phpt" />
          <file role="test" name="05search_inside.phpt" />
+         <file role="test" name="06match_shell.phpt" />
          <file role="test" name="bug2773.phpt" />
       </dir>     
   </filelist>
