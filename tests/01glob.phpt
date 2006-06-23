@@ -2,12 +2,12 @@
 File_Find::glob()
 --SKIPIF--
 <?php 
-include('./setup.php');
+include(dirname(__FILE__).'/setup.php');
 print $status; 
 ?>
 --FILE--
 <?php 
-require_once('./setup.php');
+require_once(dirname(__FILE__).'/setup.php');
 
 $ff = new File_Find();
 $result0  = &$ff->glob( '/.*txt/', $tmpdir.'/File_Find/dir/', 'perl' ) ;

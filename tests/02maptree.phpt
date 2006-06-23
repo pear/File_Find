@@ -2,12 +2,12 @@
 File_Find::mapTree()
 --SKIPIF--
 <?php 
-include('./setup.php');
+include(dirname(__FILE__).'/setup.php');
 print $status; 
 ?>
 --FILE--
 <?php 
-require_once('./setup.php');
+require_once(dirname(__FILE__).'/setup.php');
 
 $ff = new File_Find();
 $result[0]  = $ff->mapTree('File_Find/dir/') ;

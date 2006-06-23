@@ -2,12 +2,12 @@
 File_Find::test 'shell' mode patterns
 --SKIPIF--
 <?php 
-include('./setup.php');
+include(dirname(__FILE__).'/setup.php');
 print $status; 
 ?>
 --FILE--
 <?php 
-require_once('./setup.php');
+require_once(dirname(__FILE__).'/setup.php');
 
 // *.php -> .*\.php$
 $result[0] = &File_Find::search('*.*', 'File_Find/dir/', 'shell', false);
