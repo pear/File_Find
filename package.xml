@@ -32,23 +32,23 @@ directory searching, as well as a slew of other cool features.
   </maintainers>
 
   <release>
-    <version>1.2.2</version>
-    <date>2006-02-11</date>
+    <version>1.3.0</version>
+    <date>2006-06-30</date>
     <license>PHP</license>
     <state>stable</state>
    <notes>
-+ Empty pattern workaround from bug #6173 also in glob method
+Work towards stream support. This version doesn't try to normalize
+slashes in returned result and thus it's output may be inconsistent
+with of previous versions.
 
-Various 'enhancements' to 'shell' method
-http://pear.php.net/manual/en/package.filesystem.file-find.searchmethods.php
++ new object variable $this->dirsep to explicitly define directory
+separator (forward slash by default)
 
-* Empty pattern specified in 'shell' is equal to '*.*'
+- drop out "use only native system slashes" and "replace double
+slashes if any" beautifiers which damage stream prefixes and stream
+specific URLs
 
-- Empty exclude mask of a 'shell' pattern is detected correctly now
-
-+ Use *. to match files without extension
-
-+ use filename.*. to match files with only one 'extension' (bug #5503)
+- minor comment fixes
    </notes> 
 
   <provides type="class" name="File_Find" />  
@@ -76,6 +76,27 @@ http://pear.php.net/manual/en/package.filesystem.file-find.searchmethods.php
   </release>
 
   <changelog>
+
+  <release>
+    <version>1.2.2</version>
+    <date>2006-02-11</date>
+    <license>PHP</license>
+    <state>stable</state>
+   <notes>
++ Empty pattern workaround from bug #6173 also in glob method
+
+Various 'enhancements' to 'shell' method
+http://pear.php.net/manual/en/package.filesystem.file-find.searchmethods.php
+
+* Empty pattern specified in 'shell' is equal to '*.*'
+
+- Empty exclude mask of a 'shell' pattern is detected correctly now
+
++ Use *. to match files without extension
+
++ use filename.*. to match files with only one 'extension' (bug #5503)
+   </notes> 
+  </release>
 
   <release>
     <version>1.2.1</version>
