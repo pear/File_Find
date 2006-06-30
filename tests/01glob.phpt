@@ -42,5 +42,5 @@ Array
     [1] => 2.txt
     [2] => txtdir
 )
-Cannot open directory
+Cannot open directory /nosuch/
 
