@@ -108,6 +108,8 @@ class File_Find
             $matches = null;
         }
 
+        sort($matches);
+
         return $matches ;
     }
 
@@ -147,6 +149,9 @@ class File_Find
             File_Find::_build($dir, $this->dirsep);
             array_push($this->directories, $dir);
         }
+
+        sort($this->directories);
+        sort($this->files);
 
         $retval = array($this->directories, $this->files);
         return $retval;
@@ -196,7 +201,9 @@ class File_Find
             }
             closedir($dh);
         }
-     
+
+        sort($retval);
+
         while (list($key, $val) = each($retval)) {
             $path = $directory . "/" . $val;
       
@@ -266,6 +273,8 @@ class File_Find
                 } 
             }
         }
+
+        sort($matches);
 
         return $matches;
     }

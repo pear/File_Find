@@ -34,20 +34,20 @@ Array
     [0] => Array
         (
             [0] => File_Find/dir
-            [1] => File_Find/dir/txtdir
+            [1] => File_Find/dir/dir2
             [2] => File_Find/dir/dir3
-            [3] => File_Find/dir/dir2
+            [3] => File_Find/dir/txtdir
         )
 
     [1] => Array
         (
             [0] => File_Find/dir/1.txt
             [1] => File_Find/dir/2.txt
-            [2] => File_Find/dir/txtdir/5.txt
-            [3] => File_Find/dir/dir3/4.bak
-            [4] => File_Find/dir/dir3/4.txt
-            [5] => File_Find/dir/dir2/3.bak
-            [6] => File_Find/dir/dir2/3.txt
+            [2] => File_Find/dir/dir2/3.bak
+            [3] => File_Find/dir/dir2/3.txt
+            [4] => File_Find/dir/dir3/4.bak
+            [5] => File_Find/dir/dir3/4.txt
+            [6] => File_Find/dir/txtdir/5.txt
         )
 
 )
@@ -56,20 +56,20 @@ Array
     [0] => Array
         (
             [0] => File_Find/dir
-            [1] => File_Find/dir/txtdir
+            [1] => File_Find/dir/dir2
             [2] => File_Find/dir/dir3
-            [3] => File_Find/dir/dir2
+            [3] => File_Find/dir/txtdir
         )
 
     [1] => Array
         (
             [0] => File_Find/dir/1.txt
             [1] => File_Find/dir/2.txt
-            [2] => File_Find/dir/txtdir/5.txt
-            [3] => File_Find/dir/dir3/4.bak
-            [4] => File_Find/dir/dir3/4.txt
-            [5] => File_Find/dir/dir2/3.bak
-            [6] => File_Find/dir/dir2/3.txt
+            [2] => File_Find/dir/dir2/3.bak
+            [3] => File_Find/dir/dir2/3.txt
+            [4] => File_Find/dir/dir3/4.bak
+            [5] => File_Find/dir/dir3/4.txt
+            [6] => File_Find/dir/txtdir/5.txt
         )
 
 )
@@ -78,20 +78,20 @@ Array
     [0] => Array
         (
             [0] => File_Find/dir
-            [1] => File_Find/dir/txtdir
+            [1] => File_Find/dir/dir2
             [2] => File_Find/dir/dir3
-            [3] => File_Find/dir/dir2
+            [3] => File_Find/dir/txtdir
         )
 
     [1] => Array
         (
             [0] => File_Find/dir/1.txt
             [1] => File_Find/dir/2.txt
-            [2] => File_Find/dir/txtdir/5.txt
-            [3] => File_Find/dir/dir3/4.bak
-            [4] => File_Find/dir/dir3/4.txt
-            [5] => File_Find/dir/dir2/3.bak
-            [6] => File_Find/dir/dir2/3.txt
+            [2] => File_Find/dir/dir2/3.bak
+            [3] => File_Find/dir/dir2/3.txt
+            [4] => File_Find/dir/dir3/4.bak
+            [5] => File_Find/dir/dir3/4.txt
+            [6] => File_Find/dir/txtdir/5.txt
         )
 
 )
