@@ -205,13 +205,15 @@ class File_Find
         sort($retval);
 
         while (list($key, $val) = each($retval)) {
-            $path = $directory . "/" . $val;
       
-            if (!is_array($val) && is_dir($path)) {
-                unset($retval[$key]);
-                if ($maxrecursion == 0 || $count < $maxrecursion) {
-                    $retval[$val] = &File_Find::mapTreeMultiple($path, 
-                                    $maxrecursion, $count);
+            if (!is_array($val)) {
+                $path = $directory . "/" . $val;
+                if (is_dir($path)) {
+                    unset($retval[$key]);
+                    if ($maxrecursion == 0 || $count < $maxrecursion) {
+                        $retval[$val] = &File_Find::mapTreeMultiple($path, 
+                                        $maxrecursion, $count);
+                    }
                 }
             }
         }
