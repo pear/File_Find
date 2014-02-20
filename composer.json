@@ -1,0 +1,41 @@
+{
+    "authors": [
+        {
+            "email": "sterling@bumblebury.com",
+            "name": "Sterling Hughes",
+            "role": "Lead"
+        },
+        {
+            "email": "tuupola@appelsiini.net",
+            "name": "Mika Tuupola",
+            "role": "Lead"
+        },
+        {
+            "email": "techtonik@php.net",
+            "name": "Anatoly Techtonik",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "File": "./"
+        }
+    },
+    "description": "More info available on: http://pear.php.net/package/File_Find",
+    "include-path": [
+        "./"
+    ],
+    "license": "PHP",
+    "name": "pear/file_find",
+    "support": {
+        "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=File_Find",
+        "source": "https://github.com/pear/File_Find"
+    },
+    "type": "library",
+    "require": {
+        "pear/pear_exception": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    }
+}
