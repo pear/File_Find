@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.9.0" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+<package packagerversion="1.9.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
  <name>File_Find</name>
  <channel>pear.php.net</channel>
  <summary>A Class the facilitates the search of filesystems</summary>
@@ -24,10 +24,10 @@ directory searching, as well as a slew of other cool features.</description>
   <email>techtonik@php.net</email>
   <active>yes</active>
  </developer>
- <date>2010-10-06</date>
- <time>00:42:22</time>
+ <date>2014-03-09</date>
+ <time>09:12:59</time>
  <version>
-  <release>1.3.1</release>
+  <release>1.3.3</release>
   <api>1.3.0</api>
  </version>
  <stability>
@@ -36,19 +36,11 @@ directory searching, as well as a slew of other cool features.</description>
  </stability>
  <license uri="http://www.php.net/license">PHP</license>
  <notes>
-QA release
-package 2.0
-Bug #2132 Doc state &amp;search() can be called statically. It isn&apos;t true.
-Bug #2773  	Directories with other directories named 0
-Bug #4669  	Repeated calls to search or maptree return multiple copies of results
-Bug #4983 Error in install
-Bug #4994  	Close TODO
-Bug #7966 File_Find Stream Support
-Bug #14816 Unit test failures
+Fix release
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <file baseinstalldir="/" md5sum="40c5967b8ad2fa61561c8ecdc4324879" name="File/Find.php" role="php" />
+   <file baseinstalldir="/" md5sum="adfef6005da4f0b0d468f15d91f9b179" name="File/Find.php" role="php" />
    <file baseinstalldir="/" md5sum="345cc171f2b5fb7a9d0efb0954a2bc31" name="tests/01glob.phpt" role="test" />
    <file baseinstalldir="/" md5sum="399d9c5d4cd5c1dd81467092d1829d48" name="tests/02maptree.phpt" role="test" />
    <file baseinstalldir="/" md5sum="60503eb2d04d29d1ca14d40ef788119c" name="tests/03maptreemultiple.phpt" role="test" />
@@ -295,6 +287,21 @@ Bug #4983 Error in install
 Bug #4994  	Close TODO
 Bug #7966 File_Find Stream Support
 Bug #14816 Unit test failures
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.3.3</release>
+    <api>1.3.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2014-03-09</date>
+   <license uri="http://www.php.net/license">PHP</license>
+   <notes>
+Fix release
    </notes>
   </release>
  </changelog>
