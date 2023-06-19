@@ -104,11 +104,11 @@ class File_Find
 
         @closedir($dh);
 
+        sort($matches);
+
         if (0 == count($matches)) {
             $matches = null;
         }
-
-        sort($matches);
 
         return $matches ;
     }
